@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!-- displays site properly based on user's device -->
+
+      <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+
+      <title>Frontend Mentor | FAQ accordion</title>
+
+      <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+      <!-- <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style> -->
+
+      <link rel="stylesheet" href="style.css" />
+   </head>
+   <body>
+      <div class="bg-image"></div>
+      <main class="wrap-grid">
+         <div class="wrap-item">
+            <h1 class="Item--faqs-header">FAQs</h1>
+            <div class="Item--accordion-faqs">
+               <div class="accordion-item">
+                  <input type="radio" name="accordion-question" id="faq__1" />
+                  <label data-active="false" for="faq__1"
+                     ><span>What is Frontend Mentor, and how will it help me?</span
+                     ><img src="./assets/images/icon-plus.svg" alt=""
+                  /></label>
+                  <div class="answer">
+                     <p>
+                        Frontend Mentor offers realistic coding challenges to help developers improve their frontend
+                        coding skills with projects in HTML, CSS, and JavaScript. It's suitable for all levels and ideal
+                        for portfolio building.
+                     </p>
+                  </div>
+               </div>
+
+               <div class="accordion-item">
+                  <input type="radio" name="accordion-question" id="faq__2" />
+
+                  <label data-active="false" for="faq__2"
+                     ><span>Is Frontend Mentor free?</span><img src="./assets/images/icon-plus.svg" alt=""
+                  /></label>
+                  <div class="answer">
+                     <p>
+                        Yes, Frontend Mentor offers both free and premium coding challenges, with the free option
+                        providing access to a range of projects suitable for all skill levels.
+                     </p>
+                  </div>
+               </div>
+
+               <div class="accordion-item">
+                  <input type="radio" name="accordion-question" id="faq__3" />
+
+                  <label data-active="false" for="faq__3"
+                     ><span>Can I use Frontend Mentor projects in my portfolio?</span
+                     ><img src="./assets/images/icon-plus.svg" alt=""
+                  /></label>
+                  <div class="answer">
+                     <p>
+                        Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent way
+                        to showcase your skills to potential employers!
+                     </p>
+                  </div>
+               </div>
+
+               <div class="accordion-item">
+                  <input type="radio" name="accordion-question" id="faq__4" />
+
+                  <label data-active="false" for="faq__4"
+                     ><span>How can I get help if I'm stuck on a Frontend Mentor challenge?</span
+                     ><img src="./assets/images/icon-plus.svg" alt=""
+                  /></label>
+                  <div class="answer">
+                     <p>
+                        The best place to get help is inside Frontend Mentor's Discord community. There's a help channel
+                        where you can ask questions and seek support from other community members.
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </main>
+
+      <script>
+         const expandBtn = document.querySelectorAll(".accordion-item > label");
+
+         expandBtn.forEach((btn) => {
+            btn.addEventListener("click", function () {
+               let active = this.getAttribute("data-active");
+
+               if (active == "false") {
+                  this.setAttribute("data-active", "true");
+                  this.children[1].src = "./assets/images/icon-minus.svg";
+                  this.nextElementSibling.style.height = "175px";
+               } else {
+                  this.setAttribute("data-active", "false");
+                  this.children[1].src = "./assets/images/icon-plus.svg";
+                  this.nextElementSibling.style.height = "0";
+               }
+            });
+         });
+      </script>
+
+      <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+   </body>
+</html>
